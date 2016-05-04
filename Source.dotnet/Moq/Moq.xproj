@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>6931c36e-4c61-40ac-8180-0c27ba3a2eaa</ProjectGuid>
-    <RootNamespace>Moq.NetCore.Tests</RootNamespace>
+    <ProjectGuid>34e1d909-0fb7-4576-852a-43f547e43198</ProjectGuid>
+    <RootNamespace>Moq</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
   </PropertyGroup>

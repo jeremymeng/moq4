@@ -1,17 +1,20 @@
 {
   "version": "1.0.0-*",
 
-  "compile": [
-    "../../UnitTests/Library/ClassLibrary1/*.cs"
-  ],
+  "compile": [ "../../UnitTests/Library/ClassLibrary1/*.cs" ],
+  "compilationOptions": {
+    "keyFile": "../../UnitTests/Library/ClassLibrary1/Foo.snk"
+  },
 
   "dependencies": {
   },
   "frameworks": {
     "netstandard1.3": {
-      "buildOptions": { "define": [ "NETCORE" ], "keyFile": "../../UnitTests/Library/ClassLibrary1/Foo.snk" },
+      "buildOptions": {
+        "define": [ "NETCORE" ]
+      },
       "dependencies": {
-        "System.Linq.Queryable": "4.0.1-rc2-24027"
+        "System.Linq.Queryable": "4.0.1-rc2-24103"
       }
     }
   }

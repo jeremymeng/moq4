@@ -1,63 +1,62 @@
 {
-	"version": "1.0.0-*",
-	"description": "Moq.NetCore.UnitTests Class Library",
-	"authors": [ "" ],
+  "version": "1.0.0-*",
+  "description": "Moq.NetCore.UnitTests Class Library",
+  "authors": [ "" ],
   "packOptions": {
     "tags": [ "" ],
     "projectUrl": "",
     "licenseUrl": ""
   },
 
-	"compile": [
-		"../../UnitTests/**/*.cs"
-	],
+  "compile": [ "../../UnitTests/**/*.cs" ],
+  "exclude": [
+    "../../UnitTests/Library/**/*.cs",
+    "../../UnitTests/Pex/**/*.cs",
+    "../../UnitTests/Properties/**/*.cs"
+  ],
+  "buildOptions": {
+    "keyFile": "../../Moq.snk"
+  },
 
-	"exclude": [
-		"../../UnitTests/Library/**/*.cs",
-		"../../UnitTests/Pex/**/*.cs",
-		"../../UnitTests/Properties/**/*.cs"
-	],
-
-	"dependencies": {
-		"xunit": "2.1.0"
-	},
-	"testRunner": "xunit",
+  "dependencies": {
+    "Castle.Core": "4.0.0-alpha003",
+    "ClassLibrary1": {
+      "target": "project",
+      "version": "1.0.0-*"
+    },
+    "ClassLibrary2": {
+      "target": "project",
+      "version": "2.0.0-*"
+    },
+    "Moq": {
+      "target": "project",
+      "version": ""
+    },
+    "xunit": "2.1.0"
+  },
+  "testRunner": "xunit",
   "frameworks": {
     "netcoreapp1.0": {
       "buildOptions": {
-        "define": [ "NETCORE" ],
-        "keyFile": "../../Moq.snk"
+        "define": [ "NETCORE" ]
       },
       "dependencies": {
-        "Castle.Core": "4.0.0-alpha003",
-        "ClassLibrary1": {
-          "target": "project",
-          "version": "1.0.0-*"
-        },
-        "ClassLibrary2": {
-          "target": "project",
-          "version": "2.0.0-*"
-        },
-        "Moq": {
-          "target": "project",
-          "version": "99.99.99-wrapped"
-        },
         "Microsoft.NETCore.App": {
           "type": "platform",
-          "version": "1.0.0-rc2-24018"
+          "version": "1.0.0-rc2-3002611"
         },
-        "System.Collections.Specialized": "4.0.1-rc2-24018",
-          "System.ComponentModel": "4.0.1-rc2-24018",
-        "System.ComponentModel.Primitives": "4.0.1-rc2-24018",
-        "System.Linq": "4.1.0-rc2-24018",
-        "System.Linq.Queryable": "4.0.1-rc2-24018",
-        "System.ServiceModel.Primitives": "4.1.0-rc2-24018",
-        "System.Threading": "4.0.11-rc2-24018",
-        "System.Threading.Thread": "4.0.0-rc2-24018",
-        "System.Threading.Tasks.Parallel": "4.0.1-rc2-24018",
+        "System.Collections.Specialized": "4.0.1-rc2-24103",
+        "System.ComponentModel": "4.0.1-rc2-24103",
+        "System.ComponentModel.Primitives": "4.0.1-rc2-24103",
+        "System.Linq": "4.1.0-rc2-24103",
+        "System.Linq.Queryable": "4.0.1-rc2-24103",
+        "System.ServiceModel.Primitives": "4.1.0-rc2-24103",
+        "System.Threading": "4.0.11-rc2-24103",
+        "System.Threading.Thread": "4.0.0-rc2-24103",
+        "System.Threading.Tasks.Parallel": "4.0.1-rc2-24103",
         "dotnet-test-xunit": "1.0.0-dev-140469-38"
       },
-      "imports": [ "netstandardapp1.5", "dnxcore50", "portable-net451+win81" ]
+      "imports": [ "dnxcore50", "portable-net451+win81" ]
     }
   }
 }

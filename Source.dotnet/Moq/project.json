@@ -1,0 +1,89 @@
+{
+  "version": "4.4.0-alpha-*",
+  "description": "Moq .NET Core Class Library",
+  "authors": [ "Moq Team" ],
+  "packOptions": {
+    "tags": [ "" ],
+    "projectUrl": "",
+    "licenseUrl": ""
+  },
+
+  "dependencies": {
+    "Castle.Core": "4.0.0-alpha001"
+  },
+
+
+  "compile": [ "../../Source/**/*.cs" ],
+  "exclude": [ "../../Source/obj/**/*", "../../Source/bin/**/*" ],
+  "compilationOptions": {
+    "keyFile": "../../Moq.snk",
+    "embed": {
+      "include": [ ],
+      "mappings": {
+        "Moq.Properties.Resources": "../../Source/Properties/Resources.resx"
+      }
+    }
+  },
+
+  "frameworks": {
+    "netstandard1.3": {
+      "imports": [ "dotnet5.4" ],
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-rc2-24103",
+        "System.Diagnostics.Debug": "4.0.11-rc2-24103",
+        "System.Diagnostics.StackTrace": "4.0.1-rc2-24103",
+        "System.Diagnostics.Tools": "4.0.1-rc2-24103",
+        "System.Linq.Queryable": "4.0.1-rc2-24103",
+        "System.Reflection.Emit": "4.0.1-rc2-24103",
+        "System.Reflection.Extensions": "4.0.1-rc2-24103",
+        "System.Reflection.TypeExtensions": "4.1.0-rc2-24103",
+        "System.Resources.ResourceManager": "4.0.1-rc2-24103",
+        "System.Runtime.Extensions": "4.1.0-rc2-24103",
+        "System.Text.RegularExpressions": "4.0.12-rc2-24103",
+        "System.Threading": "4.0.11-rc2-24103"
+
+      },
+      "buildOptions": {
+        "define": [ "NETCORE" ]
+      }
+    },
+    "net35": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Xml": ""
+      },
+      "buildOptions": {
+        "define": [ "NET3x", "FEATURE_LEGACY_REFLECTION_API", "FEATURE_SERIALIZATION", "DESKTOP" ]
+      }
+    },
+    "net40": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Xml": ""
+      },
+      "buildOptions": {
+        "define": [ "FEATURE_LEGACY_REFLECTION_API", "FEATURE_SERIALIZATION", "DESKTOP" ]
+      }
+    },
+    "net45": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Xml": ""
+      },
+      "buildOptions": {
+        "define": [ "FEATURE_SERIALIZATION", "DESKTOP" ]
+      }
+    },
+    "net46": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Xml": ""
+      },
+      "define": [ "FEATURE_SERIALIZATION", "DESKTOP" ]
+    }
+  }
+}
