@@ -44,7 +44,6 @@ namespace Moq.Tests
 			Assert.Contains("mock", mock.ToString().ToLower());
 		}
 
-#if !SILVERLIGHT
 		[Fact]
 		public void HasADefaultNameThatIncludesItsGenericParameters()
 		{
@@ -52,7 +51,6 @@ namespace Moq.Tests
 
 			Assert.Contains("System.Collections.Generic.Dictionary<int, string>", mock.ToString());
 		}
-#endif
 
 		[Fact]
 		public void PassesItsNameOnToTheResultingMockObjectWhenMockingInterfaces()

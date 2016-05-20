@@ -13,13 +13,11 @@ using Moq.Properties;
 using Moq.Protected;
 using Xunit;
 
-#if !SILVERLIGHT
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Web.UI.HtmlControls;
 using System.Threading;
-#endif
-#if !Net3x && !SILVERLIGHT
+#if !Net3x
 using System.Threading.Tasks;
 #endif
 
@@ -84,7 +82,6 @@ namespace Moq.Tests.Regressions
         #endregion
 
 		#region 47 & 62
-#if !SILVERLIGHT
 
 		public class Issue47ClassToMock
 		{
@@ -122,11 +119,10 @@ namespace Moq.Tests.Regressions
 			testMock.Verify(x => x.M2());
 		}
 
-#endif
 		#endregion
 
 		#region #78
-#if !NET3x && !SILVERLIGHT
+#if !NET3x
 		public interface IIssue78Interface
 		{
 			Issue78TypeOne GetTypeOne();
@@ -1017,7 +1013,6 @@ namespace Moq.Tests.Regressions
 
         #region #160
 
-#if !SILVERLIGHT
         public class _160
         {
             [Fact]
@@ -1028,7 +1023,6 @@ namespace Moq.Tests.Regressions
                 Assert.True(htmlInputTextMock.Object.Visible);
             }
         }
-#endif
 
         #endregion
 
@@ -1789,8 +1783,6 @@ namespace Moq.Tests.Regressions
 
         #region #273
 
-#if !SILVERLIGHT
-
         public class _273
         {
             [Fact]
@@ -1809,8 +1801,6 @@ namespace Moq.Tests.Regressions
             {
             }
         }
-
-#endif
 
         #endregion
 
@@ -1865,8 +1855,6 @@ namespace Moq.Tests.Regressions
 
         #region #326
 
-#if !SILVERLIGHT
-
         public class _326
         {
             [Fact]
@@ -1876,8 +1864,6 @@ namespace Moq.Tests.Regressions
                 var bar = foo.Object;
             }
         }
-
-#endif
 
         #endregion
 
@@ -1937,14 +1923,12 @@ namespace Moq.Tests.Regressions
 
         #endregion
 
-        #region Silverlight excluded
-
-#if !SILVERLIGHT
+        #region .NET Core excluded
 
         #region #250
 
         /// <summary>
-        /// Silverlight MethodInfo protected constructor is internal, unlike desktop .NET
+        /// On .NET Core MethodInfo protected constructor is internal, unlike desktop .NET
         /// </summary>
         public class _250
         {
@@ -2033,7 +2017,6 @@ namespace Moq.Tests.Regressions
             void Do();
         }
 
-#endif
 
         #endregion
 

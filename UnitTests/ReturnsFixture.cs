@@ -7,7 +7,6 @@ namespace Moq.Tests
 {
 	public class ReturnsFixture
 	{
-#if !SILVERLIGHT
 		[Fact]
 		public void ReturnsValue()
 		{
@@ -18,7 +17,6 @@ namespace Moq.Tests
 
 			Assert.Equal(clone, mock.Object.Clone());
 		}
-#endif
 
 		[Fact]
 		public void ReturnsNullValueIfSpecified()

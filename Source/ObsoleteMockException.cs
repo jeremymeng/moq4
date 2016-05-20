@@ -67,9 +67,7 @@ namespace Moq
 	/// </para>
 	/// </remarks>
 	[SuppressMessage("Microsoft.Design", "CA1032:ImplementStandardExceptionConstructors", Justification = "It's only initialized internally.")]
-#if !SILVERLIGHT
 	[Serializable]
-#endif
 	public class ObsoleteMockException : Exception
 	{
 		/// <summary>
@@ -128,7 +126,6 @@ namespace Moq
 			);
 		}
 
-#if !SILVERLIGHT
 		/// <summary>
 		/// Supports the serialization infrastructure.
 		/// </summary>
@@ -154,16 +151,13 @@ namespace Moq
 			base.GetObjectData(info, context);
 			info.AddValue("reason", reason);
 		}
-#endif
 	}
 
 	/// <devdoc>
 	/// Used by the mock factory to accumulate verification 
 	/// failures.
 	/// </devdoc>
-#if !SILVERLIGHT
 	[Serializable]
-#endif
 	internal class ObsoleteMockVerificationException : ObsoleteMockException
 	{
 		IProxyCall[] failedSetups;
@@ -219,7 +213,6 @@ namespace Moq
 			return GetRawSetups(failedSetups);
 		}
 
-#if !SILVERLIGHT
 		/// <summary>
 		/// Supports the serialization infrastructure.
 		/// </summary>
@@ -229,6 +222,5 @@ namespace Moq
 			: base(info, context)
 		{
 		}
-#endif
 	}
 }

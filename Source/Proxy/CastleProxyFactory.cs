@@ -62,14 +62,12 @@ namespace Moq.Proxy
 			AttributesToAvoidReplicating.Add<SecurityPermissionAttribute>();
 #pragma warning restore 618
 
-#if !SILVERLIGHT
 			AttributesToAvoidReplicating.Add<ReflectionPermissionAttribute>();
 			AttributesToAvoidReplicating.Add<PermissionSetAttribute>();
 			AttributesToAvoidReplicating.Add<System.Runtime.InteropServices.MarshalAsAttribute>();
 			AttributesToAvoidReplicating.Add<UIPermissionAttribute>();
 #if !NET3x
 			AttributesToAvoidReplicating.Add<System.Runtime.InteropServices.TypeIdentifierAttribute>();
-#endif
 #endif
 			proxyOptions = new ProxyGenerationOptions { Hook = new ProxyMethodHook(), BaseTypeForInterfaceProxy = typeof(InterfaceProxy) };
 		}

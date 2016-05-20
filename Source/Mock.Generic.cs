@@ -47,10 +47,8 @@ using Moq.Proxy;
 using Moq.Language;
 using System.Reflection;
 
-#if !SILVERLIGHT
 using System.CodeDom;
 using Microsoft.CSharp;
-#endif
 
 namespace Moq
 {
@@ -124,7 +122,6 @@ namespace Moq
 
 			var typeName = typeof (T).FullName;
 
-#if !SILVERLIGHT
 			if (typeof (T).IsGenericType)
 			{
 				using (var provider = new CSharpCodeProvider())
@@ -133,7 +130,6 @@ namespace Moq
 					typeName = provider.GetTypeOutput(typeRef);
 				}
 			}
-#endif
 
 			return "Mock<" + typeName + ":" + randomId + ">";
 		}
